@@ -1,2 +1,3 @@
-# ga-wdi-playground
-A playground for code and unicorns
+# GA WDI Playground
+
+A playground for code and :honeybee:s
