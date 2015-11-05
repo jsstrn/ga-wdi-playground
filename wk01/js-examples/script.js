@@ -1,6 +1,3 @@
-Array.forEach()
-Array.some
-
 var person = 'sebastiaan'
 
 // Count the number of times the letter a appears in the name
