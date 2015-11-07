@@ -2,6 +2,7 @@ var dot = 'O' // Player 1
 var cross = 'X' // Player 2
 
 var currentPlayer = 1
+var tilesClicked = 0
 var gameOver = false
 
 var tiles = Array.from(document.querySelectorAll('div.tile'))
@@ -45,7 +46,11 @@ function checkWinner (tiles, segments) {
 function declareWinner (winner) {
   gameOver = true
   var displayWinner = document.querySelector('div #display-winner')
-  displayWinner.textContent = winner + ' is the winner'
+  if (winner) {
+    displayWinner.textContent = winner + ' is the winner'
+  } else {
+    displayWinner.textContent = 'It\'s a draw'
+  }
 }
 
 var body = document.querySelector('body')
@@ -54,14 +59,31 @@ body.addEventListener('click', event => {
   if (!gameOver) {
     var tile = event.target
     if (tile.className !== 'tile') return
+    if (tilesClicked === 9) {
+      declareWinner()
+    }
     if (tile.textContent) return
     if (currentPlayer === 1) {
       tile.textContent = dot
       currentPlayer = 2
+      tilesClicked++
     } else {
       tile.textContent = cross
       currentPlayer = 1
+      tilesClicked++
     }
     checkWinner(tiles, segments)
   }
 })
+
+// Test Case
+function drawScenario () {
+  var index = 0
+  var draw = [cross, dot, cross,
+    dot, dot, cross,
+    cross, cross]
+  tiles.forEach(tile => {
+    tile.textContent = draw[index]
+    index++
+  })
+}
