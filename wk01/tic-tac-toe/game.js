@@ -61,6 +61,7 @@ body.addEventListener('click', event => {
     if (tile.className !== 'tile') return
     if (tilesClicked === 9) {
       declareWinner()
+      return
     }
     if (tile.textContent) return
     if (currentPlayer === 1) {
