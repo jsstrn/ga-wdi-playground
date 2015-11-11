@@ -76,15 +76,3 @@ body.addEventListener('click', event => {
     checkWinner(tiles, segments)
   }
 })
-
-// Test Case
-function drawScenario () {
-  var index = 0
-  var draw = [cross, dot, cross,
-    dot, dot, cross,
-    cross, cross]
-  tiles.forEach(tile => {
-    tile.textContent = draw[index]
-    index++
-  })
-}
