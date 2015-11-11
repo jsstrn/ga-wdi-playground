@@ -1,0 +1,14 @@
+main {
+  position: relative;
+}
+
+main div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  background: red;
+  font-size: 40pt
+}
